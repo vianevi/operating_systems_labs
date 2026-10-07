@@ -1,0 +1,67 @@
+Results for ex2.c
+
+After running the program with n = 3, 8 processes was created, 2^n = 2^3 = 8
+The output for n = 3:
+
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ ./ex2 3 &
+[8] 2592
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2592)---ex2(2593)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2592)-+-ex2(2593)---ex2(2596)
+           |                    |                                                      |           `-ex2(2597)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2592)-+-ex2(2593)-+-ex2(2596)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2604)
+           |                    |                                                      |           |-ex2(2597)---ex2(2605)
+           |                    |                                                      |           `-ex2(2602)
+
+
+After running the program with n = 5, 32 processes was created, 2^n = 2^5 = 32
+The output for n = 5:
+
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ ./ex2 5 &
+[1] 2635
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2635)---ex2(2636)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2635)-+-ex2(2636)---ex2(2641)
+           |                    |                                                      |           `-ex2(2642)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2635)-+-ex2(2636)---ex2(2641)
+           |                    |                                                      |           `-ex2(2642)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2635)-+-ex2(2636)-+-ex2(2641)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2649)
+           |                    |                                                      |           |-ex2(2642)---ex2(2648)
+           |                    |                                                      |           `-ex2(2650)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2635)-+-ex2(2636)-+-ex2(2641)-+-ex2(26+
+           |                    |                                                      |           |           |           `-ex2(26+
+           |                    |                                                      |           |           |-ex2(2649)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2658)
+           |                    |                                                      |           |-ex2(2642)-+-ex2(2648)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2654)
+           |                    |                                                      |           |-ex2(2650)---ex2(2660)
+           |                    |                                                      |           `-ex2(2659)
+vianevi@DESKTOP-ETFG5TT:/mnt/c/Users/User/Desktop$ pstree -p | grep ex2
+           |                    |-SessionLeader(1267)---Relay(1269)(1268)---bash(1269)-+-ex2(2635)-+-ex2(2636)-+-ex2(2641)-+-ex2(26+
+           |                    |                                                      |           |           |           |-ex2(26+
+           |                    |                                                      |           |           |           `-ex2(26+
+           |                    |                                                      |           |           |-ex2(2649)-+-ex2(26+
+           |                    |                                                      |           |           |           `-ex2(26+
+           |                    |                                                      |           |           |-ex2(2658)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2673)
+           |                    |                                                      |           |-ex2(2642)-+-ex2(2648)-+-ex2(26+
+           |                    |                                                      |           |           |           `-ex2(26+
+           |                    |                                                      |           |           |-ex2(2654)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2669)
+           |                    |                                                      |           |-ex2(2650)-+-ex2(2660)---ex2(26+
+           |                    |                                                      |           |           `-ex2(2680)
+           |                    |                                                      |           |-ex2(2659)---ex2(2677)
+           |                    |                                                      |           `-ex2(2678)
+
+
+when n increased from 3 to 5, the number of processes rose from 8 to 32 - a fourfold increase;
+this is explained by the exponential relationship, the number of processes equals 2^n
+increasing n by 2 results in a 2^2 = 4
