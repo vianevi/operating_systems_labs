@@ -42,3 +42,8 @@ cat notes > notes.txt
 ```
 kill %1 %2
 ```
+
+
+## All the commands in terminal:
+
+![](image.png)
