@@ -11,3 +11,8 @@ cat output.txt errors.txt | sort | head -n 3
 /proc/1/task \
 /proc/159/task \
 /proc/160/task
+
+## All the commands in terminal:
+
+![](example2.png)
+
