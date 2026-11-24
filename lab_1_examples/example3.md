@@ -10,11 +10,15 @@ nano notes &
 fg
 ```
 
+![](example3_notes.png)
+
 ### 3. Open a new file `notes.txt` using gedit in the background, write something and save the change:
 
 ```
 gedit notes.txt &
 ```
+
+![](example3_degit_notes.png)
 
 ### 4. Print the status of job list:
 
@@ -37,6 +41,8 @@ cat notes > notes.txt
 
 ### 6. Return to the gedit:
 
+![](example3_degit_notes_new.png)
+
 ### 7. Stop both processes:
 
 ```
@@ -46,4 +52,4 @@ kill %1 %2
 
 ## All the commands in terminal:
 
-![](image.png)
+![](example3.png)
