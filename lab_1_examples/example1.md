@@ -17,3 +17,7 @@ David \
 Charlie \
 Bob \
 Alice
+
+## All the commands in terminal:
+
+![](example1.png)
