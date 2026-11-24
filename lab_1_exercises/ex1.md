@@ -18,4 +18,4 @@ cat ~/week01/ex1.txt
 
 ## All the commands in terminal:
 
-![](example3.png)
+![](ex1.png)
