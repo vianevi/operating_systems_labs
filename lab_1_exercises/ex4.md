@@ -19,4 +19,4 @@ Hello World!
 
 ## All the commands in terminal:
 
-![](ex.png)
+![](ex4.png)
