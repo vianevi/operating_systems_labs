@@ -1,0 +1,10 @@
+Lab 7 - Exercise 1
+
+First fit: 0.22 s
+Best fit: 0.25 s
+Worst fit: 0.29 s
+
+Findings
+1. First fit has the highest throughput, it stops at the first hole that is big enough, so it usually inspects only a part of the block list
+2. Best fit and worst fit must always walk through the whole list of blocks, so every allocation costs more -> lower throughput
+

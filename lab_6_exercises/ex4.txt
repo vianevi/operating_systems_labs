@@ -1,0 +1,24 @@
+Lab 6 - Exercise 4
+
+        ct   tat   wt   rt
+P0     11    6     4    4
+P1     29   22    16    6
+P2     32   12     9    5
+P3     25   22    14    1
+P4      9    7     3    0
+P5      7    4     3    3
+P6     31   21    15    5
+avg_wt  = 64/7 = 9.143
+avg_tat = 94/7 = 13.429
+avg_rt  = 24/7 = 3.43
+
+Comparison of the three runs:
+              avg_wt   avg_tat   avg_rt
+FCFS           8.000    12.286    8.000
+SJF            4.857     9.143    4.857
+RR (q = 2)     9.143    13.429    3.429
+
+ - Round Robin has the best response time, every process gets the cpu soon after it arrives (P3 starts after 1 s instead of 21 s with SJF). That is why RR is used for interactive systems
+ - Round Robin has the WORST average waiting/turnaround time here, long jobs are cut into pieces and all of them finish late (P1, P6 finish at 29 and 31), SJF is still the best for the averages
+ - Each preemption is a context switch (SIGTSTP + SIGCONT here); in a real OS it costs time, so a very small quantum wastes cpu, while a very large quantum turns Round Robin into FCFS. With q >= 8 Round Robin gives exactly the FCFS results
+ - Rounf Robin never starves anybody: every process in the queue gets a quantum each round

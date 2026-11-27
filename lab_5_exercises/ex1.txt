@@ -1,0 +1,9 @@
+Lab 5 - Exercise 1
+
+1. Because each subscriber had its own pipe every subscriber received every message. The publisher's child process writes the meassage only into s{i} and only subscriber i reads from s{i}
+
+2. If multiple subscribers read from the same pipe, only the first one to call read() gets the message. The others will never see it, to make sure every subscriber gets a copy of every message each subscriber needs their own personal pipe
+
+3. Unnamed pipes live only in the memory (kernel), they are used only by related processes (like a parent and child created by fork()) and they disappear when the process closes them.
+Data only goes one way, for two-way communication, you need two pipes.
+Named pipes (FIFO) have a name in the file system, any process can open them,they stay on the disk until you delete them.
