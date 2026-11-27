@@ -1,0 +1,21 @@
+Lab 6 - Exercise 3
+
+       ct   tat   wt   rt
+P0      9    4     2    2
+P1     15    8     2    2
+P2     24    4     1    1
+P3     32   29    21   21
+P4      6    4     0    0
+P5      7    4     3    3
+P6     21   11     5    5
+avg_wt = 34/7 = 4.857
+avg_tat = 64/7 = 9.143
+
+
+Findings:
+ - The price is paid by the long job: P3 (bt = 8) arrived at t = 3 but started only
+   at t = 24 (wt = 21, compared to 3 with FCFS), if short jobs kept arriving, P3
+   could wait forever -> STARVATION
+ - Both algorithms are non-preemptive, so rt = wt for every process
+ - The total time is the same (32 s): the CPU is never idle after t = 2, only the
+   ORDER changes
